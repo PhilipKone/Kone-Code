@@ -1,2 +1,2 @@
 # Kone Code
-Code the futu the right way
+Code the future the right way.
