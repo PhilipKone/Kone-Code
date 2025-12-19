@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import '../App.css';
 import { FaBars, FaTimes, FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import CourseModal from '../components/CourseModal';
 
 function Home() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [selectedCourse, setSelectedCourse] = useState(null);
 
     const courses = [
         {
@@ -13,6 +16,7 @@ function Home() {
             level: 'All Levels',
             icon: '🐍',
             desc: 'Master Python for data science, machine learning, and automation.',
+            longDesc: 'Deep dive into Python syntax, data structures, and libraries like Pandas and Scikit-Learn. Build real-world AI models used in modern tech industries.',
             status: 'Open'
         },
         {
@@ -21,6 +25,7 @@ function Home() {
             level: 'Beginner to Advanced',
             icon: '⚡',
             desc: 'Build dynamic web applications with modern ES6+ standards.',
+            longDesc: 'Learn the DOM, Event Loop, Async/Await, and modern frameworks like React. Create interactive front-end experiences from scratch.',
             status: 'Open'
         },
         {
@@ -29,6 +34,7 @@ function Home() {
             level: 'Intermediate',
             icon: '⚙️',
             desc: 'System-level programming, game development, and high-performance apps.',
+            longDesc: 'Understand memory management, pointers, and object-oriented programming. Build efficient, high-performance software and game engines.',
             status: 'Open'
         },
         {
@@ -37,6 +43,7 @@ function Home() {
             level: 'Intermediate',
             icon: '📈',
             desc: 'Statistical analysis, data visualization, and academic research.',
+            longDesc: 'Master R for statistical computing. Learn data cleaning, visualization with ggplot2, and hypothesis testing for academic and business research.',
             status: 'Open'
         },
         {
@@ -45,6 +52,7 @@ function Home() {
             level: 'Advanced',
             icon: '🔢',
             desc: 'Numerical computing for engineering and scientific applications.',
+            longDesc: 'Solve complex engineering problems using matrix manipulations, plotting of functions and data, and implementation of algorithms with Simulink.',
             status: 'Open'
         },
         {
@@ -53,12 +61,19 @@ function Home() {
             level: 'Beginner',
             icon: '📑',
             desc: 'Automate spreadsheets and business processes with Visual Basic.',
+            longDesc: 'Unlock the power of Excel. Automate repetitive tasks, create custom functions, and build user forms to streamline business processes.',
             status: 'Open'
         }
     ];
 
     return (
         <div className="app-container">
+            <AnimatePresence>
+                {selectedCourse && (
+                    <CourseModal course={selectedCourse} onClose={() => setSelectedCourse(null)} />
+                )}
+            </AnimatePresence>
+
             {/* Navigation */}
             <nav className="navbar">
                 <div className="logo">
@@ -105,7 +120,21 @@ function Home() {
                             <h3 className="mt-3">{course.title}</h3>
                             <p className="level text-accent small uppercase mb-2" style={{ letterSpacing: '1px' }}>{course.level}</p>
                             <p className="description text-secondary">{course.desc}</p>
-                            <Link to="/ide" className="btn-card mt-3" style={{ textDecoration: 'none' }}>View Curriculum &rarr;</Link>
+                            <button
+                                onClick={() => setSelectedCourse(course)}
+                                className="btn-card mt-3"
+                                style={{
+                                    textDecoration: 'none',
+                                    background: 'transparent',
+                                    border: '1px solid rgba(255,255,255,0.1)',
+                                    cursor: 'pointer',
+                                    color: 'var(--accent-color)',
+                                    width: '100%',
+                                    textAlign: 'left'
+                                }}
+                            >
+                                View Curriculum &rarr;
+                            </button>
                         </div>
                     ))}
                 </div>
