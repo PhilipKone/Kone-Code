@@ -100,9 +100,9 @@ function Home() {
                 <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                     <a href="#courses" onClick={() => setIsMenuOpen(false)}>Courses</a>
                     <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
-                    <div className="action-buttons">
+                    <div className="action-buttons" style={{ display: 'flex', gap: '1rem' }}>
                         <a href="https://PhilipKone.github.io/Kone-Consult/#/login" className="btn-login" onClick={() => setIsMenuOpen(false)}>Login</a>
-                        <a href="https://PhilipKone.github.io/Kone-Code-Academy/" className="btn-hub" onClick={() => setIsMenuOpen(false)}>Back to Hub</a>
+                        <a href="https://www.koneacademy.io/" className="btn-hub" onClick={() => setIsMenuOpen(false)}>Back to Hub</a>
                     </div>
                 </div>
             </nav>
@@ -124,6 +124,31 @@ function Home() {
                     </button>
                 </div>
             </header>
+
+            {/* About Section */}
+            <section id="about" className="courses-section" style={{ paddingBottom: '0' }}>
+                <h2 className="section-title">ABOUT KONE CODE</h2>
+                <div className="glass-card" style={{ padding: '2rem' }}>
+                    <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
+                        <strong>Kone Code</strong> is the dedicated software engineering division of Kone Academy.
+                        We provide world-class training in modern programming languages, system architecture, and development workflows.
+                        Our mission is to bridge the gap between theoretical computer science and practical, industry-standard software development.
+                    </p>
+                    <a
+                        href="#courses"
+                        className="btn-primary"
+                        style={{
+                            textDecoration: 'none',
+                            display: 'inline-block',
+                            background: 'transparent',
+                            border: '1px solid var(--accent-primary)',
+                            color: 'var(--accent-primary)'
+                        }}
+                    >
+                        Explore Modules &rarr;
+                    </a>
+                </div>
+            </section>
 
             {/* Courses Grid */}
             <section id="courses" className="courses-section">
