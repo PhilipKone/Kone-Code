@@ -127,7 +127,7 @@ function Home() {
 
             {/* About Section */}
             <section id="about" className="courses-section" style={{ paddingBottom: '0' }}>
-                <h2 className="section-title">ABOUT KONE CODE</h2>
+                <h2 className="section-title">About Kone Code</h2>
                 <div className="glass-card" style={{ padding: '2rem' }}>
                     <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
                         <strong>Kone Code</strong> is the dedicated software engineering division of Kone Academy.
@@ -152,7 +152,7 @@ function Home() {
 
             {/* Courses Grid */}
             <section id="courses" className="courses-section">
-                <h2 className="section-title">AVAILABLE MODULES</h2>
+                <h2 className="section-title">Available Modules</h2>
                 <div className="grid">
                     {courses.map(course => (
                         <div key={course.id} className="card glass-card">
