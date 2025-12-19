@@ -98,8 +98,8 @@ function Home() {
                 </div>
 
                 <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-                    <a href="#courses" onClick={() => setIsMenuOpen(false)}>Courses</a>
-                    <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
+                    {/* <a href="#courses" onClick={() => setIsMenuOpen(false)}>Courses</a>
+                    <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a> */}
                     <div className="action-buttons" style={{ display: 'flex', gap: '1rem' }}>
                         <a href="https://PhilipKone.github.io/Kone-Consult/#/login" className="btn-login" onClick={() => setIsMenuOpen(false)}>Login</a>
                         <a href="https://www.koneacademy.io/" className="btn-hub" onClick={() => setIsMenuOpen(false)}>Back to Hub</a>
