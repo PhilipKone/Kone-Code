@@ -4,10 +4,12 @@ import { FaBars, FaTimes, FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import CourseModal from '../components/CourseModal';
+import ConstructionModal from '../components/ConstructionModal';
 
 function Home() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [selectedCourse, setSelectedCourse] = useState(null);
+    const [showConstruction, setShowConstruction] = useState(false);
 
     const courses = [
         {
@@ -70,7 +72,17 @@ function Home() {
         <div className="app-container">
             <AnimatePresence>
                 {selectedCourse && (
-                    <CourseModal course={selectedCourse} onClose={() => setSelectedCourse(null)} />
+                    <CourseModal
+                        course={selectedCourse}
+                        onClose={() => setSelectedCourse(null)}
+                        onLaunch={() => {
+                            setSelectedCourse(null);
+                            setShowConstruction(true);
+                        }}
+                    />
+                )}
+                {showConstruction && (
+                    <ConstructionModal onClose={() => setShowConstruction(false)} />
                 )}
             </AnimatePresence>
 
@@ -103,7 +115,13 @@ function Home() {
                         Advanced software engineering training for the next generation of developers.<br />
                         <span className="text-white">Code the future the right way.</span>
                     </p>
-                    <Link to="/ide" className="btn-primary" style={{ textDecoration: 'none', display: 'inline-block' }}>LAUNCH IDE</Link>
+                    <button
+                        onClick={() => setShowConstruction(true)}
+                        className="btn-primary"
+                        style={{ display: 'inline-block' }}
+                    >
+                        LAUNCH IDE
+                    </button>
                 </div>
             </header>
 

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FaTimes, FaExternalLinkAlt, FaBookOpen, FaCode } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const CourseModal = ({ course, onClose }) => {
+const CourseModal = ({ course, onClose, onLaunch }) => {
     if (!course) return null;
 
     return (
@@ -88,8 +88,8 @@ const CourseModal = ({ course, onClose }) => {
                     >
                         Close
                     </button>
-                    <Link
-                        to="/ide"
+                    <button
+                        onClick={onLaunch}
                         className="btn-primary"
                         style={{
                             textDecoration: 'none',
@@ -101,11 +101,12 @@ const CourseModal = ({ course, onClose }) => {
                             background: '#0ea5e9',
                             color: 'white',
                             border: 'none',
-                            fontWeight: 'bold'
+                            fontWeight: 'bold',
+                            cursor: 'pointer'
                         }}
                     >
                         <FaCode /> Launch IDE
-                    </Link>
+                    </button>
                 </div>
             </motion.div>
         </motion.div>
