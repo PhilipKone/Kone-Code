@@ -9,26 +9,50 @@ function Home() {
     const courses = [
         {
             id: 'python',
-            title: 'Python Masterclass',
-            level: 'Beginner to Advanced',
+            title: 'Python for Data & AI',
+            level: 'All Levels',
             icon: '🐍',
-            desc: 'Data structure, algorithms, and AI development basics.',
+            desc: 'Master Python for data science, machine learning, and automation.',
             status: 'Open'
         },
         {
-            id: 'web',
-            title: 'Full Stack Web',
-            level: 'Intermediate',
-            icon: '🌐',
-            desc: 'React, Node.js, and modern UI/UX principles.',
-            status: 'Waitlist'
+            id: 'javascript',
+            title: 'Modern JavaScript',
+            level: 'Beginner to Advanced',
+            icon: '⚡',
+            desc: 'Build dynamic web applications with modern ES6+ standards.',
+            status: 'Open'
         },
         {
-            id: 'data',
-            title: 'Data Science Core',
+            id: 'cpp',
+            title: 'C / C++ Programming',
+            level: 'Intermediate',
+            icon: '⚙️',
+            desc: 'System-level programming, game development, and high-performance apps.',
+            status: 'Open'
+        },
+        {
+            id: 'r',
+            title: 'R for Statistics',
+            level: 'Intermediate',
+            icon: '📈',
+            desc: 'Statistical analysis, data visualization, and academic research.',
+            status: 'Open'
+        },
+        {
+            id: 'matlab',
+            title: 'MATLAB & Simulink',
             level: 'Advanced',
-            icon: '📊',
-            desc: 'Pandas, NumPy, and predictive modeling foundations.',
+            icon: '🔢',
+            desc: 'Numerical computing for engineering and scientific applications.',
+            status: 'Open'
+        },
+        {
+            id: 'vba',
+            title: 'Excel VBA',
+            level: 'Beginner',
+            icon: '📑',
+            desc: 'Automate spreadsheets and business processes with Visual Basic.',
             status: 'Open'
         }
     ];
