@@ -101,7 +101,7 @@ function Home() {
                     <a href="#courses" onClick={() => setIsMenuOpen(false)}>Courses</a>
                     <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
                     <div className="action-buttons">
-                        <a href="https://PhilipKone.github.io/Kone-Consult/#/login" className="btn-login" onClick={() => setIsMenuOpen(false)}>Student Login</a>
+                        <a href="https://PhilipKone.github.io/Kone-Consult/#/login" className="btn-login" onClick={() => setIsMenuOpen(false)}>Login</a>
                         <a href="https://PhilipKone.github.io/Kone-Code-Academy/" className="btn-hub" onClick={() => setIsMenuOpen(false)}>Back to Hub</a>
                     </div>
                 </div>
