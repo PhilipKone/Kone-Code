@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaTimes, FaExternalLinkAlt, FaBookOpen } from 'react-icons/fa';
+import { FaTimes, FaExternalLinkAlt, FaBookOpen, FaCode } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const CourseModal = ({ course, onClose }) => {
