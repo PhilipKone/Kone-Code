@@ -38,7 +38,7 @@ function Home() {
             {/* Navigation */}
             <nav className="navbar">
                 <div className="logo">
-                    <img src="/Kone-Code/logo-circle-blue.svg" alt="Logo" style={{ height: '24px', marginRight: '10px', verticalAlign: 'middle' }} />
+                    <img src="/logo-circle-blue.svg" alt="Logo" style={{ height: '24px', marginRight: '10px', verticalAlign: 'middle' }} />
                     Kone Code
                 </div>
 
