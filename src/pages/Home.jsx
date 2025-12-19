@@ -129,24 +129,11 @@ function Home() {
             <section id="about" className="courses-section" style={{ paddingBottom: '0' }}>
                 <h2 className="section-title">About Kone Code</h2>
                 <div className="glass-card" style={{ padding: '2rem' }}>
-                    <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
+                    <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--text-secondary)', marginBottom: '0' }}>
                         <strong>Kone Code</strong> is the dedicated software engineering division of Kone Academy.
                         We provide world-class training in modern programming languages, system architecture, and development workflows.
                         Our mission is to bridge the gap between theoretical computer science and practical, industry-standard software development.
                     </p>
-                    <a
-                        href="#courses"
-                        className="btn-primary"
-                        style={{
-                            textDecoration: 'none',
-                            display: 'inline-block',
-                            background: 'transparent',
-                            border: '1px solid var(--accent-primary)',
-                            color: 'var(--accent-primary)'
-                        }}
-                    >
-                        Explore Modules &rarr;
-                    </a>
                 </div>
             </section>
 
