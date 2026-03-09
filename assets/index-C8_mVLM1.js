@@ -71,7 +71,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 import io
                 sys.stdout = io.StringIO()
                 sys.stderr = io.StringIO()
-            `);let I=!1,yt="";try{await D.runPythonAsync(r)}catch(vt){I=!0,yt=vt.toString()}const pt=await D.runPythonAsync("sys.stdout.getvalue()"),K=await D.runPythonAsync("sys.stderr.getvalue()");let it=pt;K&&(it+="\\n"+K),I&&(it+="\\n"+yt),!it&&!I&&(it="Program finished with no output.");const ct=`
+            `);let I=!1,yt="";try{await D.runPythonAsync(r)}catch(vt){I=!0,yt=vt.toString()}const pt=await D.runPythonAsync("sys.stdout.getvalue()"),K=await D.runPythonAsync("sys.stderr.getvalue()");let it=pt;K&&(it+=`
+`+K),I&&(it+=`
+`+yt),!it&&!I&&(it="Program finished with no output.");const ct=`
                 <html>
                 <style>
                     body { color:#c9d1d9; background:#0d1117; font-family: monospace; padding: 20px; margin: 0; }
@@ -97,7 +99,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     } catch(e) {
                         throw e;
                     }
-                `)(Ct),D=it}catch(it){I=!0,yt=it.toString()}let pt=D.join("\\n");I&&(pt+=(pt?"\\n":"")+yt),!pt&&!I&&(pt="Program finished with no output.");const K=`
+                `)(Ct),D=it}catch(it){I=!0,yt=it.toString()}let pt=D.join(`
+`);I&&(pt+=(pt?`
+`:"")+yt),!pt&&!I&&(pt="Program finished with no output.");const K=`
                 <html>
                 <style>
                     body { color:#c9d1d9; background:#0d1117; font-family: monospace; padding: 20px; margin: 0; }
@@ -117,7 +121,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     ${I?"":'<p class="success" style="font-size: 0.8em; margin-top: 10px;">Exited with code 0</p>'}
                 </body>
                 </html>
-            `;c(K),U(!1)},100)},w=async()=>{U(!0),c('<html><style>body{color:#c9d1d9; background:#0d1117; font-family: monospace; padding: 20px;}</style><body><p>Running Lua natively via WebAssembly (Fengari)...</p><p style="color:#8b949e; font-size: 0.8em">Initial load may take a few seconds.</p></body></html>'),setTimeout(async()=>{try{window.fengari||window.exports&&window.exports.fengari||window.module&&window.module.exports||await new Promise((O,J)=>{if(typeof window.define=="function"&&window.define.amd&&window.require)window.require(["https://cdn.jsdelivr.net/npm/fengari-web@0.1.4/dist/fengari-web.js"],ot=>{window.fengari=ot,O()});else{const ot=document.createElement("script");ot.src="https://cdn.jsdelivr.net/npm/fengari-web@0.1.4/dist/fengari-web.js",ot.onload=O,ot.onerror=J,document.head.appendChild(ot)}});let I=[],yt=!1,pt="";const K=console.log,it=console.error;console.log=(...O)=>{I.push(O.map(J=>typeof J=="object"?JSON.stringify(J):String(J)).join(" "))},console.error=(...O)=>{I.push("ERROR: "+O.map(J=>typeof J=="object"?JSON.stringify(J):String(J)).join(" "))};const ct=window.fengari||window.exports&&window.exports.fengari||window.module&&window.module.exports;if(!ct||!ct.load)throw new Error("Fengari object not found. The WASM module failed to initialize.");try{ct.load(r)()}catch(O){yt=!0,pt=O.toString()}finally{console.log=K,console.error=it}let vt=I.join("\\n");yt&&(vt+=(vt?"\\n":"")+pt),!vt&&!yt&&(vt="Program finished with no output.");const Ct=`
+            `;c(K),U(!1)},100)},w=async()=>{U(!0),c('<html><style>body{color:#c9d1d9; background:#0d1117; font-family: monospace; padding: 20px;}</style><body><p>Running Lua natively via WebAssembly (Fengari)...</p><p style="color:#8b949e; font-size: 0.8em">Initial load may take a few seconds.</p></body></html>'),setTimeout(async()=>{try{window.fengari||window.exports&&window.exports.fengari||window.module&&window.module.exports||await new Promise((O,J)=>{if(typeof window.define=="function"&&window.define.amd&&window.require)window.require(["https://cdn.jsdelivr.net/npm/fengari-web@0.1.4/dist/fengari-web.js"],ot=>{window.fengari=ot,O()});else{const ot=document.createElement("script");ot.src="https://cdn.jsdelivr.net/npm/fengari-web@0.1.4/dist/fengari-web.js",ot.onload=O,ot.onerror=J,document.head.appendChild(ot)}});let I=[],yt=!1,pt="";const K=console.log,it=console.error;console.log=(...O)=>{I.push(O.map(J=>typeof J=="object"?JSON.stringify(J):String(J)).join(" "))},console.error=(...O)=>{I.push("ERROR: "+O.map(J=>typeof J=="object"?JSON.stringify(J):String(J)).join(" "))};const ct=window.fengari||window.exports&&window.exports.fengari||window.module&&window.module.exports;if(!ct||!ct.load)throw new Error("Fengari object not found. The WASM module failed to initialize.");try{ct.load(r)()}catch(O){yt=!0,pt=O.toString()}finally{console.log=K,console.error=it}let vt=I.join(`
+`);yt&&(vt+=(vt?`
+`:"")+pt),!vt&&!yt&&(vt="Program finished with no output.");const Ct=`
                     <html>
                     <style>
                         body { color:#c9d1d9; background:#0d1117; font-family: monospace; padding: 20px; margin: 0; }
