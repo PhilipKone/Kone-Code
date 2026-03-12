@@ -88,8 +88,8 @@ try:
     _tree = _ast.parse(${JSON.stringify(r)}, mode='exec')
     if _tree.body and isinstance(_tree.body[-1], _ast.Expr):
         _expr = _ast.Expression(body=_tree.body[-1].value)
-        _result = eval(compile(_expr, '<input>', 'eval'))
         exec(compile(_ast.Module(body=_tree.body[:-1], type_ignores=[]), '<input>', 'exec'))
+        _result = eval(compile(_expr, '<input>', 'eval'))
         if _result is not None:
             print(repr(_result))
     else:
