@@ -1,9 +1,8 @@
-const CACHE_NAME = 'kone-code-cache-v1';
+const CACHE_NAME = 'kone-code-cache-v2';
 const urlsToCache = [
   './',
   './index.html',
-  './logo192.png',
-  './logo512.png'
+  './logo-circle-blue.svg'
 ];
 
 self.addEventListener('install', event => {
