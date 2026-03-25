@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kone-code-cache-v3';
+const CACHE_NAME = 'kone-code-cache-v4';
 const urlsToCache = [
   './',
   './logo-circle-blue.svg'
