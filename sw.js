@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kone-code-cache-v8';
+const CACHE_NAME = 'kone-code-cache-v9';
 const STATIC_ASSETS = [
   './logo-circle-blue.svg'
 ];
