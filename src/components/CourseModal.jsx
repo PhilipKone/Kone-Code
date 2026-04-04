@@ -88,8 +88,8 @@ const CourseModal = ({ course, onClose, onLaunch }) => {
                     >
                         Close
                     </button>
-                    <button
-                        onClick={onLaunch}
+                    <Link
+                        to="/ide"
                         className="btn-primary"
                         style={{
                             textDecoration: 'none',
@@ -106,7 +106,7 @@ const CourseModal = ({ course, onClose, onLaunch }) => {
                         }}
                     >
                         <FaCode /> Launch IDE
-                    </button>
+                    </Link>
                 </div>
             </motion.div>
         </motion.div>

@@ -1,95 +1,46 @@
 import React, { useState } from 'react';
 import '../App.css';
-import { FaBars, FaTimes, FaGithub } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FaBars, FaTimes, FaGithub, FaDiscord, FaLinkedin, FaFacebook, FaInstagram, FaSlack, FaYoutube, FaTiktok } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import { useNavigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import CourseModal from '../components/CourseModal';
-import ConstructionModal from '../components/ConstructionModal';
+import { useAuth } from '../context/AuthContext';
+import AuthInterceptModal from '../components/AuthInterceptModal';
+import HeroAnimation from '../components/HeroAnimation';
 
 function Home() {
+    const { currentUser } = useAuth();
+    const navigate = useNavigate();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [selectedCourse, setSelectedCourse] = useState(null);
-    const [showConstruction, setShowConstruction] = useState(false);
+    const [showAuthModal, setShowAuthModal] = useState(false);
 
-    const courses = [
-        {
-            id: 'python',
-            title: 'Python for Data & AI',
-            level: 'All Levels',
-            icon: '🐍',
-            desc: 'Master Python for data science, machine learning, and automation.',
-            longDesc: 'Deep dive into Python syntax, data structures, and libraries like Pandas and Scikit-Learn. Build real-world AI models used in modern tech industries.',
-            status: 'Open'
-        },
-        {
-            id: 'javascript',
-            title: 'Modern JavaScript',
-            level: 'Beginner to Advanced',
-            icon: '⚡',
-            desc: 'Build dynamic web applications with modern ES6+ standards.',
-            longDesc: 'Learn the DOM, Event Loop, Async/Await, and modern frameworks like React. Create interactive front-end experiences from scratch.',
-            status: 'Open'
-        },
-        {
-            id: 'cpp',
-            title: 'C / C++ Programming',
-            level: 'Intermediate',
-            icon: '⚙️',
-            desc: 'System-level programming, game development, and high-performance apps.',
-            longDesc: 'Understand memory management, pointers, and object-oriented programming. Build efficient, high-performance software and game engines.',
-            status: 'Open'
-        },
-        {
-            id: 'r',
-            title: 'R for Statistics',
-            level: 'Intermediate',
-            icon: '📈',
-            desc: 'Statistical analysis, data visualization, and academic research.',
-            longDesc: 'Master R for statistical computing. Learn data cleaning, visualization with ggplot2, and hypothesis testing for academic and business research.',
-            status: 'Open'
-        },
-        {
-            id: 'matlab',
-            title: 'MATLAB & Simulink',
-            level: 'Advanced',
-            icon: '🔢',
-            desc: 'Numerical computing for engineering and scientific applications.',
-            longDesc: 'Solve complex engineering problems using matrix manipulations, plotting of functions and data, and implementation of algorithms with Simulink.',
-            status: 'Open'
-        },
-        {
-            id: 'vba',
-            title: 'Excel VBA',
-            level: 'Beginner',
-            icon: '📑',
-            desc: 'Automate spreadsheets and business processes with Visual Basic.',
-            longDesc: 'Unlock the power of Excel. Automate repetitive tasks, create custom functions, and build user forms to streamline business processes.',
-            status: 'Open'
+    const handleLaunchIDE = (e) => {
+        if (e) e.preventDefault();
+
+        if (currentUser) {
+            navigate('/ide');
+        } else {
+            setShowAuthModal(true);
         }
-    ];
+    };
 
     return (
         <div className="app-container">
             <AnimatePresence>
-                {selectedCourse && (
-                    <CourseModal
-                        course={selectedCourse}
-                        onClose={() => setSelectedCourse(null)}
-                        onLaunch={() => {
-                            setSelectedCourse(null);
-                            setShowConstruction(true);
-                        }}
-                    />
-                )}
-                {showConstruction && (
-                    <ConstructionModal onClose={() => setShowConstruction(false)} />
-                )}
+                <AuthInterceptModal
+                    isOpen={showAuthModal}
+                    onClose={() => setShowAuthModal(false)}
+                    onContinueAsGuest={() => {
+                        sessionStorage.setItem('kone_code_guest', 'true');
+                        navigate('/ide');
+                    }}
+                />
             </AnimatePresence>
 
             {/* Navigation */}
             <nav className="navbar">
                 <div className="logo">
-                    <img src="/logo-circle-blue.svg" alt="Logo" style={{ height: '24px', marginRight: '10px', verticalAlign: 'middle' }} />
+                    <img src="/logo-circle-blue.svg" alt="Logo" style={{ height: '35px', marginRight: '10px', verticalAlign: 'middle' }} />
                     Kone Code
                 </div>
 
@@ -98,10 +49,9 @@ function Home() {
                 </div>
 
                 <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-                    {/* <a href="#courses" onClick={() => setIsMenuOpen(false)}>Courses</a>
-                    <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a> */}
                     <div className="action-buttons" style={{ display: 'flex', gap: '1rem' }}>
-                        <a href="https://PhilipKone.github.io/Kone-Consult/#/login" className="btn-login" onClick={() => setIsMenuOpen(false)}>Login</a>
+                        <a href="https://consult.koneacademy.io/#/login" className="btn-login" onClick={() => setIsMenuOpen(false)}>Login</a>
+                        <a href="https://consult.koneacademy.io/#/docs?category=code" target="_blank" rel="noopener noreferrer" className="btn-login" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }} onClick={() => setIsMenuOpen(false)}>Docs</a>
                         <a href="https://www.koneacademy.io/" className="btn-hub" onClick={() => setIsMenuOpen(false)}>Back to Hub</a>
                     </div>
                 </div>
@@ -112,16 +62,19 @@ function Home() {
                 <div className="hero-content">
                     <h1 className="hero-title">MASTER THE <br /> <span className="text-gradient">DIGITAL REALM</span></h1>
                     <p className="hero-subtitle">
-                        Advanced software engineering training for the next generation of developers.<br />
+                        Advanced software development and training for the next generation of developers.<br />
                         <span className="text-white">Code the future the right way.</span>
                     </p>
                     <button
-                        onClick={() => setShowConstruction(true)}
+                        onClick={handleLaunchIDE}
                         className="btn-primary"
-                        style={{ display: 'inline-block' }}
+                        style={{ border: 'none', cursor: 'pointer' }}
                     >
                         LAUNCH IDE
                     </button>
+                </div>
+                <div className="hero-animation-wrapper">
+                    <HeroAnimation />
                 </div>
             </header>
 
@@ -129,55 +82,48 @@ function Home() {
             <section id="about" className="courses-section" style={{ paddingBottom: '0' }}>
                 <h2 className="section-title">About Kone Code</h2>
                 <div className="glass-card" style={{ padding: '2rem' }}>
-                    <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--text-secondary)', marginBottom: '0' }}>
+                    <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--text-secondary)', marginBottom: '2rem' }}>
                         <strong>Kone Code</strong> is the dedicated software engineering division of Kone Academy.
-                        We provide world-class training in modern programming languages, system architecture, and development workflows.
+                        We provide custom software solution and world-class training in modern programming languages, system architecture, and development workflows.
                         Our mission is to bridge the gap between theoretical computer science and practical, industry-standard software development.
                     </p>
-                </div>
-            </section>
-
-            {/* Courses Grid */}
-            <section id="courses" className="courses-section">
-                <h2 className="section-title">Available Modules</h2>
-                <div className="grid">
-                    {courses.map(course => (
-                        <div key={course.id} className="card glass-card">
-                            <div className="card-header">
-                                <span className="icon" style={{ fontSize: '2rem' }}>{course.icon}</span>
-                                <span className={`status ${course.status.toLowerCase()}`}>{course.status}</span>
-                            </div>
-                            <h3 className="mt-3">{course.title}</h3>
-                            <p className="level text-accent small uppercase mb-2" style={{ letterSpacing: '1px' }}>{course.level}</p>
-                            <p className="description text-secondary">{course.desc}</p>
-                            <button
-                                onClick={() => setSelectedCourse(course)}
-                                className="btn-card mt-3"
-                                style={{
-                                    textDecoration: 'none',
-                                    background: 'transparent',
-                                    border: '1px solid rgba(255,255,255,0.1)',
-                                    cursor: 'pointer',
-                                    color: 'var(--accent-color)',
-                                    width: '100%',
-                                    textAlign: 'left'
-                                }}
-                            >
-                                View Curriculum &rarr;
-                            </button>
-                        </div>
-                    ))}
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <a href="https://consult.koneacademy.io/#/training" className="btn-secondary-outline" style={{
+                            padding: '0.8rem 2rem',
+                            borderRadius: '50px',
+                            border: '1px solid rgba(255,255,255,0.2)',
+                            color: 'white',
+                            textDecoration: 'none',
+                            fontSize: '0.9rem',
+                            fontWeight: '600',
+                            transition: 'all 0.3s ease',
+                            background: 'rgba(255,255,255,0.05)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.5rem'
+                        }}>
+                            EXPLORE ALL COURSES AT TRAINING HUB &rarr;
+                        </a>
+                    </div>
                 </div>
             </section>
 
             {/* Footer */}
             <footer className="footer">
-                <p>&copy; 2025 Kone Code Division. All Rights Reserved.</p>
+                <p>&copy; {new Date().getFullYear()} Kone Code Division. All Rights Reserved.</p>
                 <p className="footer-sub">Part of the Kone Academy Network</p>
                 <div style={{ marginTop: '0.5rem', fontSize: '1.2rem' }}>
-                    <a href="https://github.com/PhilipKone/Kone-Code.git" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
-                        <FaGithub /> GitHub
-                    </a>
+                    <div className="social-icons" style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+                        <a href="https://x.com/koneacademy" target="_blank" rel="noreferrer" aria-label="X"><FaXTwitter /></a>
+                        <a href="https://www.tiktok.com/@koneacademy?_r=1&_t=ZM-931L3z5lu71" target="_blank" rel="noreferrer" aria-label="TikTok"><FaTiktok /></a>
+                        <a href="https://github.com/PhilipKone/Kone-Code.git" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
+                        <a href="https://discord.gg/Ab4SCxPgUK" target="_blank" rel="noreferrer" aria-label="Discord"><FaDiscord /></a>
+                        <a href="https://www.linkedin.com/company/konecodeacdemy/?viewAsMember=true" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
+                        <a href="https://www.facebook.com/profile.php?id=61584327765846" target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebook /></a>
+                        <a href="https://www.instagram.com/koneacademy?igsh=bnlnaTZ5YmNsMXJ1&utm_source=qr" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
+                        <a href="https://join.slack.com/t/koneacademy/shared_invite/zt-3te5lrqpj-d3gixasFIoSerlBnoQ1UMg" target="_blank" rel="noreferrer" aria-label="Slack"><FaSlack /></a>
+                        <a href="https://youtube.com/@koneacademy?si=zqEGBiiu0NRdNk6p" target="_blank" rel="noreferrer" aria-label="YouTube"><FaYoutube /></a>
+                    </div>
                 </div>
             </footer>
         </div>
