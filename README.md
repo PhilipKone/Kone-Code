@@ -1,4 +1,4 @@
-<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="10" height="10" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Container background: circle -->
   <circle cx="100" cy="100" r="95" fill="#2563eb" />
   
