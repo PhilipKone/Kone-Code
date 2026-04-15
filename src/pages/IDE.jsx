@@ -1312,20 +1312,20 @@ except Exception as _e:
                                     >
                                         <div className="px-3 py-1 text-secondary fw-bold" style={{ fontSize: '10px', letterSpacing: '0.05em' }}>HELP & RESOURCES</div>
                                         <a 
-                                            href="https://consult.koneacademy.io/#/docs?category=code" 
+                                            href={(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:3001' : 'https://consult.koneacademy.io') + "/docs?category=code"} 
                                             target="_blank" 
                                             rel="noreferrer"
                                             className="d-flex align-items-center gap-2 px-3 py-2 text-white hover-bg-light-opacity text-decoration-none" style={{ fontSize: '13px' }}
                                         >
                                             <FaBook size={14} className="text-primary" /> Documentation
                                         </a>
-                                        <a href="https://consult.koneacademy.io/#/contact" target="_blank" rel="noopener noreferrer" className="d-flex align-items-center gap-2 px-3 py-2 text-white hover-bg-light-opacity text-decoration-none" style={{ fontSize: '13px' }}>
+                                        <a href={(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:3001' : 'https://consult.koneacademy.io') + "/contact"} target="_blank" rel="noopener noreferrer" className="d-flex align-items-center gap-2 px-3 py-2 text-white hover-bg-light-opacity text-decoration-none" style={{ fontSize: '13px' }}>
                                             <FaCommentAlt size={14} className="text-info" /> Feedback
                                         </a>
-                                        <a href="https://PhilipKone.github.io/Kone-Consult/#/training" target="_blank" rel="noopener noreferrer" className="d-flex align-items-center gap-2 px-3 py-2 text-white hover-bg-light-opacity text-decoration-none" style={{ fontSize: '13px' }}>
+                                        <a href={(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:3001' : 'https://consult.koneacademy.io') + "/training"} target="_blank" rel="noopener noreferrer" className="d-flex align-items-center gap-2 px-3 py-2 text-white hover-bg-light-opacity text-decoration-none" style={{ fontSize: '13px' }}>
                                             <FaGraduationCap size={14} className="text-warning" /> Training Hub
                                         </a>
-                                        <a href="https://PhilipKone.github.io/Kone-Consult/#/contact" target="_blank" rel="noopener noreferrer" className="d-flex align-items-center gap-2 px-3 py-2 text-white hover-bg-light-opacity text-decoration-none" style={{ fontSize: '13px' }}>
+                                        <a href={(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:3001' : 'https://consult.koneacademy.io') + "/contact"} target="_blank" rel="noopener noreferrer" className="d-flex align-items-center gap-2 px-3 py-2 text-white hover-bg-light-opacity text-decoration-none" style={{ fontSize: '13px' }}>
                                             <FaEnvelope size={14} className="text-success" /> Contact Us
                                         </a>
                                         <div 
@@ -1341,11 +1341,11 @@ except Exception as _e:
                         </div>
 
                         {currentUser ? (
-                            <a href="https://PhilipKone.github.io/Kone-Consult/#/profile" className="text-secondary hover-text-white d-flex align-items-center ms-1">
+                            <a href={(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:3001' : 'https://consult.koneacademy.io') + "/profile"} className="text-secondary hover-text-white d-flex align-items-center ms-1">
                                 <FaUserCircle size={18} />
                             </a>
                         ) : (
-                            <a href="https://PhilipKone.github.io/Kone-Consult/#/login" className="btn btn-primary border-0 ms-1" style={{ fontSize: '11px', height: '24px', padding: '0 10px', backgroundColor: '#007acc' }}>
+                            <a href={window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:3001/login' : 'https://consult.koneacademy.io/login'} className="btn btn-primary border-0 ms-1" style={{ fontSize: '11px', height: '24px', padding: '0 10px', backgroundColor: '#007acc' }}>
                                 Login
                             </a>
                         )}

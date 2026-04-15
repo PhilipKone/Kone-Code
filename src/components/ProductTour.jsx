@@ -24,7 +24,7 @@ const tourSteps = [
         title: "Power Editor",
         description: "Write your code with full IntelliSense and auto-save. Your work is automatically synced to the cloud.",
         target: "monaco-editor",
-        position: "bottom"
+        position: "center"
     },
     {
         title: "Global Run",

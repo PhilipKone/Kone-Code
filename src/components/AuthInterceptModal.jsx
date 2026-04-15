@@ -60,7 +60,7 @@ const AuthInterceptModal = ({ isOpen, onClose, onContinueAsGuest }) => {
 
                         <div className="d-flex flex-column gap-3">
                             <a
-                                href="https://consult.koneacademy.io/#/login"
+                                href={window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:3001/login' : 'https://consult.koneacademy.io/login'}
                                 className="btn-primary"
                                 style={{
                                     textDecoration: 'none',

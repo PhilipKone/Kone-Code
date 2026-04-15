@@ -50,9 +50,9 @@ function Home() {
 
                 <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                     <div className="action-buttons" style={{ display: 'flex', gap: '1rem' }}>
-                        <a href="https://consult.koneacademy.io/#/login" className="btn-login" onClick={() => setIsMenuOpen(false)}>Login</a>
-                        <a href="https://consult.koneacademy.io/#/docs?category=code" target="_blank" rel="noopener noreferrer" className="btn-login" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }} onClick={() => setIsMenuOpen(false)}>Docs</a>
-                        <a href="https://www.koneacademy.io/" className="btn-hub" onClick={() => setIsMenuOpen(false)}>Back to Hub</a>
+                        <a href={window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:3001/login' : 'https://consult.koneacademy.io/login'} className="btn-login" onClick={() => setIsMenuOpen(false)}>Login</a>
+                        <a href={(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:3001' : 'https://consult.koneacademy.io') + "/docs?category=code"} target="_blank" rel="noopener noreferrer" className="btn-login" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }} onClick={() => setIsMenuOpen(false)}>Docs</a>
+                        <a href={window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:5173/' : 'https://www.koneacademy.io/'} className="btn-hub" onClick={() => setIsMenuOpen(false)}>Back to Hub</a>
                     </div>
                 </div>
             </nav>
@@ -88,7 +88,7 @@ function Home() {
                         Our mission is to bridge the gap between theoretical computer science and practical, industry-standard software development.
                     </p>
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <a href="https://consult.koneacademy.io/#/training" className="btn-secondary-outline" style={{
+                        <a href={(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:3001' : 'https://consult.koneacademy.io') + "/training?category=code"} className="btn-secondary-outline" style={{
                             padding: '0.8rem 2rem',
                             borderRadius: '50px',
                             border: '1px solid rgba(255,255,255,0.2)',
