@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist --dotfiles"
   },
   "devDependencies": {
     "@types/react": "^19.2.14",
@@ -22,7 +22,7 @@
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",
     "@react-symbols/icons": "^1.3.0",
-    "firebase": "^12.10.0",
+    "firebase": "^12.12.1",
     "framer-motion": "^12.23.26",
     "monaco-editor": "^0.55.1",
     "react": "^19.2.1",

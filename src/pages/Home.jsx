@@ -116,7 +116,7 @@ function Home() {
                     <div className="social-icons" style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
                         <a href="https://x.com/koneacademy" target="_blank" rel="noreferrer" aria-label="X"><FaXTwitter /></a>
                         <a href="https://www.tiktok.com/@koneacademy?_r=1&_t=ZM-931L3z5lu71" target="_blank" rel="noreferrer" aria-label="TikTok"><FaTiktok /></a>
-                        <a href="https://github.com/PhilipKone/Kone-Code.git" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
+                        {/* <a href="https://github.com/PhilipKone/Kone-Code.git" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a> */}
                         <a href="https://discord.gg/Ab4SCxPgUK" target="_blank" rel="noreferrer" aria-label="Discord"><FaDiscord /></a>
                         <a href="https://www.linkedin.com/company/konecodeacdemy/?viewAsMember=true" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
                         <a href="https://www.facebook.com/profile.php?id=61584327765846" target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebook /></a>
