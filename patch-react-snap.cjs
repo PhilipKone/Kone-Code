@@ -5,3 +5,9 @@ if (fs.existsSync(p)) {
     c = c.replace(/await page\._client\.send/g, 'await (typeof page.createCDPSession === "function" ? await page.createCDPSession() : page._client).send');
     fs.writeFileSync(p, c);
 }
+const trackerFile = './node_modules/react-snap/src/tracker.js';
+if (fs.existsSync(trackerFile)) {
+    let c = fs.readFileSync(trackerFile, 'utf8');
+    c = c.replace(/page\.removeListener/g, '(page.off || page.removeListener).bind(page)');
+    fs.writeFileSync(trackerFile, c);
+}
