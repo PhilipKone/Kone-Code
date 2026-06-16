@@ -7,7 +7,6 @@ import { AnimatePresence } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 import AuthInterceptModal from '../components/AuthInterceptModal';
 import HeroAnimation from '../components/HeroAnimation';
-import ReferralCard from '../components/ReferralCard';
 
 function Home() {
     const { currentUser } = useAuth();
@@ -107,12 +106,6 @@ function Home() {
                         </a>
                     </div>
                 </div>
-            </section>
-
-            {/* Referral Section */}
-            <section id="referral" className="referral-section" style={{ padding: '3rem 1rem 0 1rem' }}>
-                <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '1.5rem', textTransform: 'uppercase' }}>Grow the Community</h2>
-                <ReferralCard />
             </section>
 
             {/* Footer */}
