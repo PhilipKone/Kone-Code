@@ -1,0 +1,406 @@
+/* Kone Code -- Referral & Virality Card Styling */
+
+.kco-referral-container {
+  background: var(--bg-glass);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: var(--shadow-md), 0 10px 30px rgba(0, 0, 0, 0.5);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  max-width: 620px;
+  margin: 2rem auto;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.kco-referral-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(88, 166, 255, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.kco-referral-container:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md), 0 20px 40px rgba(88, 166, 255, 0.08);
+}
+
+/* 1. Header */
+.kco-referral-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.75rem;
+}
+
+.kco-referral-icon-badge {
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  color: #000000;
+  padding: 0.85rem;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.award-pulse {
+  animation: awardPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes awardPulse {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(5deg); }
+}
+
+.kco-referral-header-text h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0 0 0.3rem 0;
+  background: linear-gradient(to right, #ffffff, #88d3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.kco-referral-header-text p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.kco-referral-header-text p strong {
+  color: var(--accent-success);
+}
+
+/* 2. Referral Link Area */
+.kco-referral-link-section {
+  margin-bottom: 1.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.kco-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-accent);
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-heading);
+}
+
+.kco-copy-wrapper {
+  display: flex;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 0.3rem;
+  align-items: center;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.kco-copy-wrapper:focus-within {
+  border-color: var(--text-accent);
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.2);
+}
+
+.kco-referral-input {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  padding: 0.6rem 0.8rem;
+  flex: 1;
+  outline: none;
+  font-family: var(--font-mono);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.kco-copy-btn {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, #1d4ed8 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: opacity 0.2s, transform 0.1s, background-color 0.2s;
+  font-family: var(--font-heading);
+}
+
+.kco-copy-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+.kco-copy-btn:active {
+  transform: translateY(1px);
+}
+
+.kco-copy-btn.copied {
+  background: linear-gradient(135deg, var(--accent-success) 0%, #065f46 100%);
+  box-shadow: 0 0 10px rgba(63, 185, 80, 0.3);
+}
+
+/* 3. Tuition Credit Stats Grid */
+.kco-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.kco-stat-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.kco-stat-box:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--border-hover);
+}
+
+.kco-stat-box .stat-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.kco-stat-box .stat-val {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+}
+
+.kco-stat-box:first-child .stat-val {
+  color: var(--accent-success);
+  text-shadow: 0 0 15px rgba(63, 185, 80, 0.2);
+}
+
+.kco-stat-box:last-child .stat-val {
+  color: var(--text-accent);
+  text-shadow: 0 0 15px rgba(88, 166, 255, 0.2);
+}
+
+/* 4. Progress Milestones */
+.kco-referral-progress-section {
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.kco-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.kco-badge-milestone {
+  color: var(--accent-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  background: rgba(188, 140, 255, 0.1);
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  border: 1px solid rgba(188, 140, 255, 0.2);
+}
+
+.kco-progress-bar-bg {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  position: relative;
+  margin: 1.25rem 0;
+}
+
+.kco-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-success) 100%);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kco-milestone-marker {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.kco-milestone-marker:hover {
+  transform: translate(-50%, -50%) scale(1.25);
+  box-shadow: 0 0 8px var(--text-accent);
+}
+
+.kco-milestone-marker.active {
+  background: var(--accent-success);
+  border-color: var(--text-primary);
+  box-shadow: 0 0 8px var(--accent-success);
+}
+
+.kco-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  padding: 0 0.25rem;
+}
+
+/* 5. Referred Friends List */
+.kco-referral-tracker-section {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tracker-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+}
+
+.friends-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.friend-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--border-color);
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.friend-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--border-hover);
+}
+
+.friend-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.friend-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.friend-date {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.friend-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.enrolled {
+  background-color: var(--accent-success);
+  box-shadow: 0 0 8px var(--accent-success);
+}
+
+.status-dot.registered {
+  background-color: var(--accent-secondary);
+  box-shadow: 0 0 8px var(--accent-secondary);
+}
+
+.status-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.reward-tag {
+  background: rgba(63, 185, 80, 0.1);
+  color: var(--accent-success);
+  border: 1px solid rgba(63, 185, 80, 0.2);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .kco-referral-container {
+    padding: 1.25rem;
+  }
+  .kco-referral-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .kco-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
