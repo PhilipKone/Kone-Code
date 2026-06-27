@@ -283,6 +283,26 @@ html {
     opacity: 0.6;
 }
 
+.footer-ecosystem {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.footer-ecosystem a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.footer-ecosystem a:hover {
+    color: #22c55e;
+}
+
 /* Social Icons */
 .social-icons {
     display: flex;
