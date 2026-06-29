@@ -8,11 +8,12 @@ import SEOManager from './components/SEOManager';
 import LoadingScreen from './components/LoadingScreen';
 
 function App() {
-  const [isInitializing, setIsInitializing] = React.useState(true);
+  const isCrawling = typeof window !== 'undefined' && window.navigator.userAgent.includes('ReactSnap');
+  const [isInitializing, setIsInitializing] = React.useState(!isCrawling);
 
   return (
     <AuthProvider>
-      <LoadingScreen onFinished={() => setIsInitializing(false)} />
+      {!isCrawling && <LoadingScreen onFinished={() => setIsInitializing(false)} />}
       {!isInitializing && (
         <>
           <SEOManager />
