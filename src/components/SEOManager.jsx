@@ -82,10 +82,12 @@ export const SEOManager = () => {
     updateMetaTag('og:title', activeSEO.title, true);
     updateMetaTag('og:description', activeSEO.description, true);
     updateMetaTag('og:url', `https://code.koneacademy.io${location.pathname}`, true);
+    updateMetaTag('og:image', activeSEO.image || 'https://code.koneacademy.io/og-image.png', true);
 
     // Update Twitter Card Tags
     updateMetaTag('twitter:title', activeSEO.title);
     updateMetaTag('twitter:description', activeSEO.description);
+    updateMetaTag('twitter:image', activeSEO.image || 'https://code.koneacademy.io/og-image.png');
 
     // Update Canonical URL
     let canonical = document.querySelector('link[rel="canonical"]');
