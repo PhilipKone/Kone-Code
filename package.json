@@ -7,7 +7,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "postbuild": "react-snap || echo 'Pre-rendering timed out, deploying SPA...'",
+        "postbuild": "(react-snap || echo 'Pre-rendering timed out, deploying SPA...') && node generate-fallback-routes.cjs",
         "preview": "vite preview",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d dist --dotfiles",

@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import Home from './pages/Home';
 import IDE from './pages/IDE';
+import Sitemap from './pages/Sitemap';
 import InstallBanner from './components/InstallBanner';
 import SEOManager from './components/SEOManager';
 import LoadingScreen from './components/LoadingScreen';
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/ide" element={<IDE />} />
+            <Route path="/sitemap" element={<Sitemap />} />
           </Routes>
           <InstallBanner />
         </>

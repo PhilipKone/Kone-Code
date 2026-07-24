@@ -2,41 +2,19 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const DEFAULT_SEO = {
-  title: "Kone Code | Professional Coding Bootcamps & STEM Training",
-  description: "Accelerate your career in software development. Join our Python Masterclass, JavaScript Bootcamp, and hands-on coding courses in Accra and online.",
-  keywords: "Kone Code, learn programming, Python bootcamps Ghana, coding school Accra, software developer training",
+  title: "Kone Code | Software Engineering & Technical Development",
+  description: "Professional software engineering, technical development, automated compilers, and cloud-integrated workspaces for the Kone ecosystem.",
+  keywords: "Kone Code, software engineering, technical development, web compiler, cloud IDE, software development Ghana",
   schema: [
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Kone Code Academy",
+      "name": "Kone Code",
       "url": "https://code.koneacademy.io/",
       "parentOrganization": {
         "@type": "Organization",
         "name": "Kone Academy",
         "url": "https://www.koneacademy.io/"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Python Software Engineering Track",
-      "description": "Master Python programming from syntax basics to database integrations, APIs, and Machine Learning models.",
-      "provider": {
-        "@type": "Organization",
-        "name": "Kone Code Academy",
-        "sameAs": "https://code.koneacademy.io/"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Full-Stack JavaScript & TypeScript Track",
-      "description": "Complete software engineering track covering modern JavaScript, React, Node.js, and clean TypeScript code.",
-      "provider": {
-        "@type": "Organization",
-        "name": "Kone Code Academy",
-        "sameAs": "https://code.koneacademy.io/"
       }
     }
   ]
@@ -48,6 +26,11 @@ const ROUTE_SEO_MAP = {
     title: "Interactive Web IDE | Run Code Online - Kone Code",
     description: "Write, run, and test Python, JavaScript, and HTML/CSS directly in your browser with our integrated coding workspace.",
     keywords: "online IDE, browser compiler, practice coding, code sandbox"
+  },
+  '/sitemap': {
+    title: "Kone Code Sitemap | Technical Directory",
+    description: "Technical directory and sitemap for Kone Code. Find the interactive web IDE, software engineering workspace, and developer integrations.",
+    keywords: "Kone Code sitemap, developer sitemap, software engineering index"
   }
 };
 
