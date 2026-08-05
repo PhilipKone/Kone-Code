@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../App.css';
-import { FaBars, FaTimes, FaGithub, FaDiscord, FaLinkedin, FaFacebook, FaInstagram, FaSlack, FaYoutube, FaTiktok } from 'react-icons/fa';
+import { FaBars, FaTimes, FaGithub, FaDiscord, FaLinkedin, FaFacebook, FaInstagram, FaSlack, FaYoutube, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
@@ -128,6 +128,7 @@ function Home() {
                     <div className="social-icons" style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
                         <a href="https://x.com/koneacademy" target="_blank" rel="noreferrer" aria-label="X"><FaXTwitter /></a>
                         <a href="https://www.tiktok.com/@koneacademy?_r=1&_t=ZM-931L3z5lu71" target="_blank" rel="noreferrer" aria-label="TikTok"><FaTiktok /></a>
+                        <a href="https://whatsapp.com/channel/0029Vb86bvCAO7RGUcIENu0p" target="_blank" rel="noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a>
                         {/* <a href="https://github.com/PhilipKone/Kone-Code.git" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a> */}
                         <a href="https://discord.gg/Ab4SCxPgUK" target="_blank" rel="noreferrer" aria-label="Discord"><FaDiscord /></a>
                         <a href="https://www.linkedin.com/showcase/konecode/about/?viewAsMember=true" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
