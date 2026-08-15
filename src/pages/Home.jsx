@@ -40,11 +40,11 @@ function Home() {
             {/* Navigation */}
             <nav className="navbar">
                 <div className="logo">
-                    <img src="/logo-circle-blue.svg" alt="Logo" style={{ height: '35px', marginRight: '10px', verticalAlign: 'middle' }} />
+                    <img src="/logo-circle-blue.svg" alt="Kone Code Logo" style={{ height: '35px', marginRight: '10px', verticalAlign: 'middle' }} />
                     Kone Code
                 </div>
 
-                <div className="mobile-menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                <div className="mobile-menu-toggle" role="button" aria-label="Toggle navigation menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     {isMenuOpen ? <FaTimes /> : <FaBars />}
                 </div>
 
@@ -57,56 +57,59 @@ function Home() {
                 </div>
             </nav>
 
-            {/* Hero Section */}
-            <header className="hero">
-                <div className="hero-content">
-                    <h1 className="hero-title">MASTER THE <br /> <span className="text-gradient">DIGITAL REALM</span></h1>
-                    <p className="hero-subtitle">
-                        Advanced software development and training for the next generation of developers.<br />
-                        <span className="text-white">Code the future the right way.</span>
-                    </p>
-                    <button
-                        onClick={handleLaunchIDE}
-                        className="btn-primary"
-                        style={{ border: 'none', cursor: 'pointer' }}
-                    >
-                        LAUNCH IDE
-                    </button>
-                </div>
-                <div className="hero-animation-wrapper">
-                    <HeroAnimation />
-                </div>
-            </header>
-
-            {/* About Section */}
-            <section id="about" className="courses-section" style={{ paddingBottom: '0' }}>
-                <h2 className="section-title">About Kone Code</h2>
-                <div className="glass-card" style={{ padding: '2rem' }}>
-                    <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--text-secondary)', marginBottom: '2rem' }}>
-                        <strong>Kone Code</strong> is the dedicated software engineering division of Kone Academy.
-                        We provide custom software solution and world-class training in modern programming languages, system architecture, and development workflows.
-                        Our mission is to bridge the gap between theoretical computer science and practical, industry-standard software development.
-                    </p>
-                    <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <a href={((window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && !window.navigator.userAgent.includes('ReactSnap') ? 'http://localhost:3001' : 'https://consult.koneacademy.io') + "/training?category=code"} className="btn-secondary-outline" style={{
-                            padding: '0.8rem 2rem',
-                            borderRadius: '50px',
-                            border: '1px solid rgba(255,255,255,0.2)',
-                            color: 'white',
-                            textDecoration: 'none',
-                            fontSize: '0.9rem',
-                            fontWeight: '600',
-                            transition: 'all 0.3s ease',
-                            background: 'rgba(255,255,255,0.05)',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '0.5rem'
-                        }}>
-                            EXPLORE ALL COURSES AT TRAINING HUB &rarr;
-                        </a>
+            {/* Main Landmark */}
+            <main id="main-content">
+                {/* Hero Section */}
+                <header className="hero">
+                    <div className="hero-content">
+                        <h1 className="hero-title">MASTER THE <br /> <span className="text-gradient">DIGITAL REALM</span></h1>
+                        <p className="hero-subtitle">
+                            Advanced software development and training for the next generation of developers.<br />
+                            <span className="text-white">Code the future the right way.</span>
+                        </p>
+                        <button
+                            onClick={handleLaunchIDE}
+                            className="btn-primary"
+                            style={{ border: 'none', cursor: 'pointer' }}
+                        >
+                            LAUNCH IDE
+                        </button>
                     </div>
-                </div>
-            </section>
+                    <div className="hero-animation-wrapper">
+                        <HeroAnimation />
+                    </div>
+                </header>
+
+                {/* About Section */}
+                <section id="about" className="courses-section" style={{ paddingBottom: '0' }}>
+                    <h2 className="section-title">About Kone Code</h2>
+                    <div className="glass-card" style={{ padding: '2rem' }}>
+                        <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--text-secondary)', marginBottom: '2rem' }}>
+                            <strong>Kone Code</strong> is the dedicated software engineering division of Kone Academy.
+                            We provide custom software solution and world-class training in modern programming languages, system architecture, and development workflows.
+                            Our mission is to bridge the gap between theoretical computer science and practical, industry-standard software development.
+                        </p>
+                        <div style={{ display: 'flex', justifyContent: 'center' }}>
+                            <a href={((window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && !window.navigator.userAgent.includes('ReactSnap') ? 'http://localhost:3001' : 'https://consult.koneacademy.io') + "/training?category=code"} className="btn-secondary-outline" style={{
+                                padding: '0.8rem 2rem',
+                                borderRadius: '50px',
+                                border: '1px solid rgba(255,255,255,0.2)',
+                                color: 'white',
+                                textDecoration: 'none',
+                                fontSize: '0.9rem',
+                                fontWeight: '600',
+                                transition: 'all 0.3s ease',
+                                background: 'rgba(255,255,255,0.05)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.5rem'
+                            }}>
+                                EXPLORE ALL COURSES AT TRAINING HUB &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </main>
 
             <footer className="footer">
                 <div className="footer-ecosystem">

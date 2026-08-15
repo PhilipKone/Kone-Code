@@ -52,20 +52,22 @@
     color: var(--text-primary);
 }
 
+.nav-links a.btn-hub,
 .btn-hub {
     background: var(--accent-primary);
-    color: #fff;
+    color: #0d1117 !important;
     border: none;
     padding: 8px 16px;
     border-radius: 6px;
     text-decoration: none;
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 700;
     transition: background 0.3s;
 }
 
 .btn-hub:hover {
     background: var(--accent-secondary);
+    color: #0d1117 !important;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.4);
 }
 
@@ -181,11 +183,11 @@
 
 .btn-primary {
     background: var(--accent-primary);
-    color: #fff;
+    color: #0a0c10;
     border: none;
     padding: 1rem 2.5rem;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 800;
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.2s;

@@ -86,12 +86,12 @@
 
 .install-btn {
   background: #22c55e;
-  color: #fff;
+  color: #0a0c10;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
