@@ -1,0 +1,16 @@
+# Kone Code
+
+> Software Engineering, Cloud Compilers, and Technical Masterclasses by Kone Academy.
+
+Kone Code delivers hands-on software development tuition, web frameworks, systems programming, and high-performance algorithms for developers worldwide.
+
+## Core Capabilities & Tracks
+
+- [Python Masterclass](https://code.koneacademy.io/#tracks) - Data science, web APIs (FastAPI, Django), automation, and algorithmic mastery.
+- [C & C++ School](https://code.koneacademy.io/#tracks) - Systems programming, memory management, and competitive programming.
+- [R & MATLAB](https://code.koneacademy.io/#tracks) - Scientific computing and matrix data analytics.
+- [Cloud Workspace & IDE](https://code.koneacademy.io/) - In-browser code compiler, Monaco editor, and terminal runtime.
+
+## Parent Ecosystem
+
+- [Kone Academy Main Hub](https://www.koneacademy.io/) - Multidisciplinary innovation and technology collective.
