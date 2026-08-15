@@ -270,13 +270,21 @@ html {
     border-color: var(--accent-primary);
 }
 
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Footer */
 .footer {
     margin-top: auto;
-    padding: 3rem;
+    padding: 3.5rem 1.5rem 6.5rem;
     text-align: center;
     border-top: 1px solid var(--border-color);
     color: var(--text-secondary);
+    position: relative;
+    z-index: 10;
 }
 
 .footer-sub {
